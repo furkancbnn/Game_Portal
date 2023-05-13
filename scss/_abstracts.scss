@@ -1,0 +1,116 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@500&family=Open+Sans:wght@300&display=swap');
+
+/* VARİABLES */
+
+$primary-font: 'Changa', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$primary-color: #b30505;
+$primary-color2: brown;
+
+$secondary-color: #14151a;
+$date-color: #FFB320;
+$comment-color: #08ABDB;
+$gray-color: #9f9f9f;
+$light-color: #FEFEFE;
+
+
+// $primary-font: 'Changa', sans-serif;
+// $secondary-font: 'Open Sans', sans-serif;
+// $primary-color: #e51515;
+// $secondary-color: #14151a;
+// $date-color: #FFB320;
+// $comment-color: #08ABDB;
+// $gray-color: #9f9f9f;
+// $light-color: #FEFEFE;
+
+
+
+/* UTİLİTİES */
+
+.bg-dark{
+    background-color: $secondary-color;
+}
+
+.bg-light{
+    background-color: $light-color;
+}
+
+.bg{
+    &-dark{
+        background-color: $secondary-color;
+    }
+
+    &-light{
+        background-color: $light-color;
+    }
+}
+
+.ml{
+    &-2{// ml-2
+        margin-left: 2rem;
+    }
+}
+
+
+.text-date{
+    font-size: 10.5px;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    border-bottom: 1px dashed rgb(248, 34, 34);
+
+}
+
+.text-date2{
+    color: #ff6600;
+    font-size: 9px;
+    font-style: italic;
+    transition: all .5s;
+
+    &:hover{
+        color: #b30505;
+    }
+
+
+}
+
+
+
+.text-light{
+    color: $light-color;
+}
+
+.text-primary{
+    color: $primary-color;
+    font-size: 18px;
+
+    transition: all .5s;
+}
+
+.text-primary2{
+    font-size: 17px;
+    color: $light-color;
+}
+
+/* MİXİNS */
+
+@mixin flex-display($display, $align-items, $justify-content){
+    display: $display;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin media ($screensize){
+    @if ($screensize == large) {
+        @media(max-width: 992px) {@content};
+    }
+
+    @if ($screensize == medium) {
+        @media(max-width: 768px) {@content};
+    }
+    
+    @if ($screensize == small) {
+        @media(max-width: 576px) {@content};
+    }
+}
